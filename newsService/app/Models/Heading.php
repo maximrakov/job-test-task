@@ -4,14 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Models\User;
 class Heading extends Model
 {
     use HasFactory;
 
-    public function users(): BelongsToMany
-    {
-        return $this->belongsToMany(User::class, 'heading_users');
+    protected $fillable = [
+        'name'
+    ];
+    public function users() {
+        return $this->belongsToMany(User::class);
     }
 }
