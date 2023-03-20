@@ -39,7 +39,7 @@ class UserController extends Controller
             return response('Not valid data', 400);
         }
         Heading::create($request->post());
-        return response('OK', 200);
+        return response('OK', 201);
     }
 
     public function headings(Request $request, $id) {
